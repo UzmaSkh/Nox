@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nox</title>
+
+    <meta name="author" content="Uzma Sookrah">
+    <meta name="description" content="causes and solutions for bad sleep quality">
+    <meta name="keywords" content="sleep, sleeping quality, sleep solutions, insomnia, universit stuents">
+
+    <link rel="stylesheet" href="style.css"> <!--to link css-->
+    <link rel="icon" href="images/tabicon.png"> 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css" />  <!--copied from shoelace, to be able to use their library-->
+</head>
+
+<body>
+    <!--MUSIC--> 
+     <audio id="backgroundmusic" preload="auto" loop> <!--adding music to play on loop --> 
+        <source src="audio/sleep.mp3" type="audio/mpeg"> <!--Eternal Warrior. 2024. peaceful solitude. YouTube Video, 1:00:00. https://uniskills.library.curtin.edu.au/referencing/chicago17/av/#youtube-or-other-streaming-video.-->
+    </audio>
+    
+    <sl-button id="musicBtn" circle> <!--shoelace button but insead of text an icon was added, andthe button was modified to make it round. Shoelace. n.d. “Quick Start.” Shoelace. Accessed October 24, 2025. https://shoelace.style/.--> 
+        <sl-icon id="musicIcon" name="play"></sl-icon> <!--making the button an icon, making use of the picture superiority effect, Lucide. n.d. “Play.” Lucide. Accessed October 24, 2025. https://lucide.dev/icons/play. --> 
+    </sl-button>
+
+    <!--HEADER SECTION--> 
+    <header>
+        <nav>
+            <a href="#home"> <!--to go gack to home-->
+                <p class="homenav">NOX</p>
+            </a>
+
+            <div class="navlinks">
+                <a href="#reasons"> <!--to go gack to home-->
+                    <p class="reasonsnav">Reasons</p>
+                </a>
+                <a href="#solutions"> <!--to go gack to home-->
+                    <p class="solutionsnav">Solutions</p> 
+                </a>
+            </div>
+        </nav>
+    </header>
+ 
+    <!--MAIN SECTION--> 
+    <main class="container"><!--opening the main section--> 
+
+        <!--FIRST SECTION--> 
+        <section id="home"> <!--adding an id to be able to link it to the nav links--> 
+            <h1>Can't Sleep?</h1>
+            <h2 class="subheading">Let's look into it!</h2>
+
+            <div class="clouds">
+                <img class= "cloud homecloud1" id=cloud1 src="images/cloud1.png" alt="cloud decoration image" >   <!--class= cloud will be to target all the cloud in css, class=homecloud1 is to modify their size individually and th id is so that i can more easily target them in js--> 
+                <img class= "cloud homecloud2" id=cloud2 src="images/cloud2.png" alt="cloud decoration image">
+            </div>
+        </section>
+
+        <!--SECOND SECTION--> 
+        <section id="secondsection">
+            <div class="second">
+                <h2> Don't worry<br> you're not alone...</h2>
+            </div>
+        </section>
+
+        <!--THIRD SECTION--> 
+        <section id="reasons"><!--adding an id to be able to link it to the nav links--> 
+            <h2 class="reasonsheading">Here's some factors which might be <br> affecting your sleep:</h2>  <!--section title--> 
+            <div class="gallerysection">
+                <div class="imagegallery">  <!--image gallery with grid--> 
+                    <img class="galleryim" src="images/gallery1.jpg" alt="illustration of a person holding their head in stress">  <!--Pikisuperstar. n.d.“Illustration for world mental health day awareness.” Freepik Company S.L. Accessed September 24, 2025. https://www.freepik.com/free-vector/illustration-world-mental-health-day-awareness_66240928.htm#fromView=search&page=1&position=19&uuid=0ff48a43-8f6b-4fdf-9987-eaa4ebb14986&query=stress.--> 
+                    <img class="galleryim" src="images/gallery2.jpg" alt="illustration of a person using their phone in the dark">  <!--Freepik. n.d.“Medo de perder o conceito.” Freepik Company S.L. Accessed September 23, 2025. https://br.freepik.com/vetores-gratis/medo-de-perder-o-conceito_9813507.htm.--> 
+                    <img class="galleryim" src="images/gallery3.jpg" alt="illustration of a person sleeping in a hot room">  <!--Freepik. n.d.“Flat summer heat illustration with woman in front of fan.” Freepik Company S.L. Accessed September 23, 2025. https://www.freepik.com/free-vector/flat-summer-heat-illustration-with-woman-front-fan_27448472.htm#fromView=search&page=1&position=3&uuid=e6ab180e-6017-4665-afb0-fe73c029562a&query=heat.--> 
+                    <img class="galleryim" src="images/gallery4.jpg" alt="illustration of a person eating donuts">  <!--Pinterest. n.d.Pinterest. Accessed September 23, 2025. https://www.pinterest.com/pin/248542473186567483/.-->     
+                </div> 
+            </div>
+        </section>
+        
+        <!--FOURTH SECTION--> 
+        <section id="thirdsection">
+            <div class="third">
+                <h2>Here's what you can do about it ...</h2>
+            </div>
+        </section>
+
+
+        <!--FIFTH SECTION--> 
+        
+        <section id="solutions">
+            <h2 class="solutionstitle">Have a good bedtime routine</h2>
+            
+            <div class="contentrow">
+
+                <div class="bulletcontent"> 
+                    <ul class="solutionlist">
+                        <li class="bullet">Leave at least 30 minutes to wind down before sleeping.</li> <!--adding list items with bullet points--> 
+                        <li class="bullet">Try some relaxing activities before you sleep.</li>
+                        <li class="bullet">Listen to calm music.</li>
+                        <li class="bullet">Sleep and wake up at the same time everyday.</li>
+                        <li class="bullet">Sleep for more than 7 hours per night.</li>
+                    </ul>
+                </div>
+                
+                <div class="recordsection">  <!--section to contain the record player and the pin--> 
+                    <div class="recordanimation">
+                        <div class="centerrotate" id="centerrotate"> <!--adding class and id to make it easier to target in css and js--> 
+                            <img src="images/record.svg" id="record" class="record" alt="record player"/> 
+                        </div>
+                        <img src="images/pin.svg" id="pin" class="pin" alt="record player pin" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--SIXTH SECTION--> 
+        
+        <section id="secondsolution">
+            <h2 class="fantitle">Have a good sleep environment</h2>
+            
+            <div class="fancontentrow">
+
+                <div class="fansection">  <!--section to conatain the fan body and blade--> 
+                    <div id="bladefan">
+                        <img src="images/fan.svg" class="fan-body" alt="fan body" />
+                        <div id="bladesvg" class="rotate">
+                            <img src="images/blade.svg" alt="fan blade" id="fan-blade" />
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bulletcontent">  <!--bullet point added after the image here to reverse te layout and create a zig-zag layout--> 
+                    <ul class="solutionlist">
+                        <li class="bullet">Make sure your room is dark or use a sleep mask.</li>
+                        <li class="bullet">Set a cool and comfortable temperature.</li>
+                        <li class="bullet">Consider a white noise machine or use the sound of a fan.</li>
+                        <li class="bullet">Use comfortable bedding.</li>
+                        <li class="bullet">Try sleep sprays which are calming and relaxing.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!--SEVENTH SECTION-->
+        <section id="thirdsolution">
+            <h2 class="section-title">Reduce blue lights</h2>
+
+            <div class="phonecontentrow">
+
+                <div class="bulletcontent">
+                    <ul class="solutionlist">
+                        <li class="bullet">Avoid blue light before sleep as it can obstruct melatonin production, a hormone that facilitates sleep.</li>
+                        <li class="bullet">Unplug electronics 30min before sleep to prevent mental stimulation.</li>
+                    </ul>
+                </div>
+                
+                <div class="phonesection">
+                    <div class="phonesstack"> <!-- adding both images which will one on top of each other and they one of them will be hidden -->
+                        <img src="images/phoneon.png" id="phoneOn" class="phoneimg visible" alt="phone on" />
+                        <img src="images/phoneoff.png" id="phoneOff" class="phoneimg" alt="phone off" />
+                    </div>
+                    
+                     <div class="switches">
+                        <sl-switch id="powerSwitch" checked>On</sl-switch>  <!--Switch from shoelace. Shoelace. n.d. “Swicth.” Shoelace. Accessed October 24, 2025. https://shoelace.style/components/switch.-->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--EIGHTH SECTION-->
+        <section id="eighthsection">
+            <div class="eight">
+                <h2>and now it's time to sleep...</h2>
+            </div>
+        </section>
+
+         <!--NINTH SECTION-->
+        <section id="ninthsection">
+            <div class="nine">
+                <h2>Goodnight</h2>
+            </div>
+        </section>
+
+        <!--FOOTER-->
+        <footer>
+            <div class="footercontents">
+                <div class="footerleft">
+                    <h3 class="logo">NOX</h2>
+                    <p class="footeremail">nox@gmail.com</p>
+                </div>
+                
+                <div class="footerright">
+                    <h4>DISCLAIMER</h3>
+                    <p class="footertext"> This website has been created as part of an assignment in an approved course of study
+                        <br>for Curtin University and contains copyright material not created by the author.<br>
+                        All copyright material used remains copyright of the respective owners and has been used
+                        <br>here pursuant to Section 40 of the Copyright Act 1968 (Commonwealth of Australia).
+                        <br>No part of this work may be reproduced without consent of the original copyright owners.
+                        <br>See code comments for references.
+                    </p>
+                </div>
+            </div>
+            
+            <p class="copyright">© 2025 Nox by Uzu</p>
+        </footer>
+
+
+    </main>
+    
+        <!--links for Shoelace--> 
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script>  <!--Shoelace. n.d. “Quick Start.” Shoelace. Accessed October 24, 2025. https://shoelace.style/.-->
+
+        <!--links for GSAP for js--> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script> <!--to link gsap library, obtain from cdnjs, this one is first as it load up the library copied from cdnjs. Cdnjs. n.d. “GSAP.” Cdnjs. Accessed October 20, 2025. https://cdnjs.com/libraries/gsap. /  “Installation.” GSAP. Accessed October 22, 2025. https://gsap.com/docs/v3/Installation.-->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script> <!--to link gsap scrolltrigger plugin, obtain from cdnjs. Cdnjs. n.d. “GSAP ScrollTrigger.” Cdnjs. Accessed October 20, 2025. https://cdnjs.com/libraries/gsap/ScrollTrigger.-->
+    
+        <script src="main.js"></script> <!--to link js, should be after everything in the body for it to be displayed and processed everything above correctly-->
+</body>
+</html>

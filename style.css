@@ -1,0 +1,517 @@
+/* ==========FONTS FROM FOLDER============= */
+@font-face { 
+    font-family: "caveatBrush";
+    src: url("fonts/Caveat_Brush/CaveatBrush-Regular.ttf");
+}
+@font-face {
+    font-family: "quicksand";
+    src: url("fonts/Quicksand/Quicksand-VariableFont_wght.ttf"); 
+}
+
+/* ==========BASIC UNIVERSAL STYLING & CLEAN UP============= */
+
+/* some basic css resetting */
+*{
+    box-sizing: border-box;
+}
+html {
+    scroll-padding-top: 100px; /*so that content are not hidden behind the navigation bar*/
+}
+
+body {
+    margin: 0; /*to disable any default margin*/
+    padding: 0;
+    font-family:"quicksand"; /*setting default text to quicksand*/
+    color: #fff;
+    background-image: url("./images/backgroundimage.jpg"); /*adding an image here so that it is in the backgrounf an wil not interfre with the content, W3Schools. n.d.“CSS Background Image.” W3School. Accessed October 24, 2025. https://www.w3schools.com/css/css_background_image.asp. */
+    background-size: cover; /*to make sure that the image covers the whole website, Pinterest. n.d. Pinterest. Accessed September 23, 2025. https://in.pinterest.com/pin/703546773075334212/*/
+    background-position: center top; /*to start at the top*/
+    background-repeat: no-repeat; /*the image was created on figma in the correct size of the website so no need to repeat*/
+    overflow-x: hidden; /*as the clouds will originally be cut off on the side, this will disable the horiontal scroll as I want these to stay hidden*/ 
+}
+
+a {
+    text-decoration: none; /*to remove underline when a link is used*/
+    color: #fff; /*to changing the default blue colour*/
+}
+
+/* ==========MUSIC============= */
+#musicBtn {  /*adjusted the position for the play button*/
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;/*for it to appear on tp like the nav*/
+    opacity: 0;
+    animation: fades 1s ease-out forwards; /* adding forward so that ot stays in the final position at 100% */
+    animation-delay: 0.3s;   /*adding a delay to make it come up after the website has loaded*/
+}
+
+@keyframes fades {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); 
+    }
+    100% {
+        opacity: 0.6;  
+        transform: translateY(0); /*back to original position*/
+    }
+}
+
+#musicIcon {  /*adjusting the size of the icon*/
+    width: 30px;
+    height: 30px;
+    margin-bottom: -5px;
+}
+
+/* ==========NAVIGATION============= */
+
+header{
+    margin-top: 20px;
+}
+
+nav{ /*nav bar*/
+    position: fixed; /*to stay fixed on top*/
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center; /*to center items inside*/
+    justify-content: space-between; /*adding space in between the item inside the nav*/
+    background-color: rgba(255, 255, 255, 0.45); /*nav bar*/
+    border-radius: 50px;
+    height: 7vh;
+    width: 90%;
+    margin: auto;
+    margin-left: 5%;
+    margin-top: 20px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    padding-left: 50px;
+    padding-right: 50px;
+  
+}
+
+.homenav{
+    color: #FDD691;
+    font-family:"caveatBrush";
+    font-size: 40px;
+}
+
+.homenav:hover { /*adding transition when hovering over the logo */
+    transform: scale(1.1); /*changing the scale */
+    transition: transform 0.3s ease; /*to make it move slower instead of snapping to a larger scale*/
+}
+
+.navlinks{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.reasonsnav, .solutionsnav{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.reasonsnav:hover { /*adding transition when hovering over the logo */
+    transform: scale(1.1); /*changing the scale */
+    transition: transform 0.3s ease; /*to make it move slower instead of snapping to a larger scale*/
+    color: #FDD691;
+    font-weight: 700;
+}
+.solutionsnav:hover { /*adding transition when hovering over the logo */
+    transform: scale(1.1); /*changing the scale */
+    transition: transform 0.3s ease; /*to make it move slower instead of snapping to a larger scale*/
+    color: #FDD691;
+    font-weight: 700;
+}
+
+
+/* ==========SECTION 1 - HOMEPAGE============= */
+
+
+#home{
+    position: relative;  /* so that everything is position relative to this container*/ 
+    padding: 100px 20px; /* top and bottom 100px and right and left 20px */
+    height: 100vh; /* so that it takes the whole screen */
+    overflow: visible; /*to not cut off the clouds when moving sections */
+}
+
+h1{
+    font-family: "caveatBrush"; /* changing font type */
+    font-size:12rem;  /* changing font size */
+    font-weight: lighter;  /* changing font weight */
+    text-align: center;  /* so that the text are centered */
+    color: #ABD1F5;  /* changing font colour */
+}
+
+.subheading{
+    font-family: "caveatBrush";
+    font-size:4rem;
+    font-weight: lighter;
+    text-align: center;
+    color: #ABD1F5;
+    margin-top: -130px;  /* to position it closer to the h1, making it easier to read and removing a gap */
+}
+
+.clouds {
+    position: absolute;
+    inset: 0; /* to target all sides at the same time for the same value 0.*/
+    z-index: 10; /* so that the clouds cover the title as we scroll.*/  
+    pointer-events: none;  /* it stopped the clouds from blocking the nav links. W3Schools. n.d. “CSS pointer-events Property.” W3School. Accessed October 20, 2025. https://www.w3schools.com/cssref/css3_pr_pointer-events.php.  */        
+}
+
+.cloud {
+    position: absolute; 
+}
+
+.homecloud1 {
+    width: 1150px; /* adjusting position of clouds with trial and error.*/
+    top: 17%; 
+    left: -20rem; 
+}
+
+.homecloud2 {
+    width: 700px;
+    top: 35%;
+    left: 73rem;
+}
+
+
+/* ==========SECTION 2, 4============= */
+
+.second, .third{
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2{
+    font-family: "caveatBrush"; /* changing font type */
+    font-size:3rem;  /* changing font size */
+    font-weight: lighter;  /* changing font weight */
+    text-align: center;  /* so that the text are centered */
+    color: #ABD1F5;  /* changing font colour */
+    margin-bottom:30rem;
+}
+
+/* ==========SECTION 3 - REASONS============= */
+
+
+.reasonsheading{
+    font-family: "caveatBrush"; /* changing font type */
+    font-size:3rem;  /* changing font size */
+    font-weight: lighter;  /* changing font weight */
+    text-align: center;  /* so that the text are centered */
+    color: #ABD1F5;  /* changing font colour */
+    margin-top: -10px;
+}
+
+.gallerysection{ /*adjusting the layout*/
+    width: 90%;
+    height: 100vh;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap; /* to make the element go one beloe the other*/
+    justify-content: center;
+    align-items: center;
+    margin-top: -590px;
+}
+
+.imagegallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 1 fraction for each images to make them equal in size and divide them equally on the grid in 2 columns*/
+    grid-template-rows: 1fr 1fr; /* 1 fraction for each images to make them equal in size and divide them equally on the grid in 2 rows*/
+    gap: 50px;
+}
+
+.galleryim{
+    border-radius: 10px;
+}
+
+.galleryim:hover { /*adding transition when hovering over the logo */
+    transform: scale(1.2); /*changing the scale */
+    transition: transform 0.3s ease; /*to make it move slower instead of snapping to a larger scale*/
+}
+
+
+/* ==========SECTION 5 - SOLUTIONS============= */
+
+
+#solutions {
+    width: 900px;
+    margin: 60px auto;
+    text-align: center;
+    margin-top: -80px;
+}
+
+.solutionstitle {
+    font-size: 3rem;
+    color: #ABD1F5;
+    margin-bottom: 40px;
+}
+
+.contentrow {  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.bulletcontent { /*aligning bullet points on the left */
+    max-width: 800px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.solutionlist {
+    padding: 0;
+    margin: 0;
+}
+
+.solutionlist .bullet {
+    font-size: 16px;
+    color: #FED596;
+    font-family: quicksand;
+    font-weight: bolder;
+    line-height: 2;
+}
+
+.recordsection {
+    width: 420px;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recordanimation {
+    width: 240px;
+    height: 240px;
+    position: relative;
+}
+
+.centerrotate { /* Rotating the record on the center point */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 350px;
+    transform-origin: 50% 50%;
+    margin-top: -35px;
+}
+
+.record {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transform-origin: 50% 50%;
+    cursor: pointer;  /* for the cursor to change, to show users that they can interact with it */
+}
+
+.pin {
+    position: absolute;
+    width: 250px;
+    right: -50%;
+    top: -3%;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25)); /* drop shadow to make it appear like it is on top on the record */
+    pointer-events: none; /*to allow users to click on the record without blocking it*/
+}
+
+/* ==========SECTION 6 - SOLUTIONS============= */
+
+#secondsolution {  /*same as above*/
+    width: 900px;
+    margin: 80px auto;
+    text-align: center;
+    margin-top: 340px;
+}
+
+.fantitle {
+    font-size: 3rem;
+    color: #dfe9ff;
+    margin-bottom: 40px; 
+}
+
+.fancontentrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.fansection {
+    width: 400px;
+    height: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bladefan {  /*adjusting the postion of the fan */
+    width: 640px;
+    height: 640px;
+    position: relative; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-240px)
+}
+
+.fan-body { /*fan body will be static*/
+    position: absolute;
+    width: 640px;
+    height: 640px;
+    left: 0;
+    top: 0;
+}
+
+#bladesvg { /*fan blade wil spin*/
+    position: absolute; 
+    z-index: 2; /* to position it over the fan body */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 640px; /* using same postion as to make the the blade fit inside the fan */
+    height: 640px;
+    left: 0;
+    top: 0;
+    transform-origin: 50% 50%; /*making the center point of the blade the point to spin */
+}
+
+
+.bulletcontent {
+  margin-top: 100px;
+}
+
+
+/* ==========SECTION 7 - SOLUTIONS============= */
+
+#thirdsolution { /*similar as above*/
+    width: 900px;
+    margin: 60px auto;
+    text-align: center;
+    margin-top: 350px;
+}
+
+.phonecontentrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 120px;
+    margin-top: -650px;
+}
+
+.phonesection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.phonesstack { /* stacking both images at once in the same position */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 440px;   
+    height: 880px;  
+    margin-top: -40px;
+    margin-right: -100px;
+}
+
+.phoneimg { /* stacking both images */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+}
+
+.phoneimg.visible { /* using js to make the image switch, when phoneon is visible, phoneoff will be hidden and vice versa. */
+  display: block;
+}
+
+.switches{ 
+  margin-top: -250px;
+  margin-left: 100px;
+}
+
+/* ==========SECTION 8============= */
+
+#eighthsection{
+    margin-top: 230px;
+}
+
+/* ==========SECTION 8============= */
+#ninthsection{
+    margin-top: 590px;
+}
+
+/* ==========FOOTER============= */
+
+footer {
+    height: 100vh;
+    color: #dfe9ff;         
+    padding: 40px 60px 20px;
+}
+
+.footercontents {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 180px;
+}
+
+.footerleft {
+    flex: 1;
+    max-width: 400px;
+    margin-top: -100px;  
+    margin-left: 200px;
+}
+
+.logo {
+    color: #FDD691;
+    font-family:"caveatBrush";
+    font-size: 90px;
+    font-weight: lighter;
+}
+
+.footeremail {
+  font-size: 14px;
+  color: #dfe9ff;
+  margin-top: -92px;
+  margin-left: 15px;
+}
+
+
+
+.footerright {
+  flex: 2;
+  max-width: 600px;
+}
+
+h4 {
+  font-size: 14px;
+  color: #d0d6e2;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.footertext {
+  font-size: 12px;
+  text-align: left;
+  color:  #d0d6e2;
+  line-height: 1.6;
+}
+
+
+.copyright {
+  text-align: center;
+  font-size: 12px;
+  color: #d0d6e2;
+  margin-top: 300px;
+}
